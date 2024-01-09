@@ -135,11 +135,11 @@ export class AuthService {
 
     this.usuario = new Usuario();
     this.usuario.username = datos.user_name;
-    this.usuario.per_codigo = datos.per_codigo;
+    this.usuario.personaCodigo = datos.personaCodigo;
     this.usuario.roles = datos.authorities;
-    this.usuario.nombre = datos.nombre;
-    this.usuario.apellido = datos.apellido;
-    this.usuario.uaa = datos.uaa;
+    this.usuario.personaNombre = datos.personaNombre;
+    this.usuario.personaApellido = datos.personaApellido;
+    this.usuario.uaaNombre = datos.uaaNombre;
 
     sessionStorage.setItem('usuario', JSON.stringify(this.usuario));
     localStorage.setItem('usuario', JSON.stringify(this.usuario));

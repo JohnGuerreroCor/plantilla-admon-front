@@ -9,13 +9,8 @@ import { NavbarHiddenService } from 'src/app/services/navbar-hidden.service';
 import { FotoService } from 'src/app/services/foto.service';
 import { FotoAntigua } from '../../../models/foto-antigua';
 import { ErrorStateMatcher } from '@angular/material/core';
-import {
-  FormControl,
-  FormGroupDirective,
-  NgForm,
-  Validators,
-} from '@angular/forms';
-import swal from 'sweetalert2';
+import { FormControl, FormGroupDirective, NgForm } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-navbar',
@@ -23,11 +18,11 @@ import swal from 'sweetalert2';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
-  public perCodigo: any = this.auth.user.per_codigo;
-  public perCodigoAntigua: any = '' + this.auth.user.per_codigo;
-  public nombre: any = this.auth.user.nombre;
-  public apellido: any = this.auth.user.apellido;
-  public uaa: any = this.auth.user.uaa;
+  public perCodigo: any = this.auth.user.personaCodigo;
+  public perCodigoAntigua: any = '' + this.auth.user.personaCodigo;
+  public nombre: any = this.auth.user.personaNombre;
+  public apellido: any = this.auth.user.personaApellido;
+  public uaa: any = this.auth.user.uaaNombre;
   public roles: any[] = this.auth.user.roles;
   public rol: any = this.roles.toString();
 
@@ -39,9 +34,6 @@ export class NavbarComponent implements OnInit {
   };
 
   public foundMenuItems = [];
-
-  estudianteActivo: string = '';
-  graduado: string = '';
 
   private fotoLoaded = false; // Variable para controlar si la foto se ha cargado
 
@@ -58,26 +50,7 @@ export class NavbarComponent implements OnInit {
     private router: Router,
     public navbarHiddenService: NavbarHiddenService,
     public fotoService: FotoService
-  ) {
-    /*  this.fotoService.mirarFoto('' + this.perCodigo).subscribe((data) => {
-      var gg = new Blob([data], { type: 'application/json' });
-      if (gg.size !== 4) {
-        var blob = new Blob([data], { type: 'image/png' });
-        const foto = blob;
-        const reader = new FileReader();
-        reader.onload = () => {
-          this.foto.url = reader.result as string;
-        };
-        reader.readAsDataURL(foto);
-      } else {
-        this.fotoService
-          .mirarFotoAntigua('' + this.perCodigo)
-          .subscribe((data) => {
-            this.foto = data;
-          });
-      }
-    }); */
-  }
+  ) {}
 
   hideHintsErrorStateMatcher: ErrorStateMatcher = {
     isErrorState(
@@ -92,51 +65,21 @@ export class NavbarComponent implements OnInit {
     },
   };
 
-  cambioIconoEstudiante(event: any) {
-    this.foundMenuItems = [];
-
-    if (event.target.value) {
-      this.estudianteActivo = event.target.value;
-      return;
-    } else {
-      this.estudianteActivo = '';
-    }
-  }
-
-  iconoEstudianteClick() {
-    this.estudianteActivo = '';
-  }
-
-  cambioIconoGraduado(event: any) {
-    this.foundMenuItems = [];
-
-    if (event.target.value) {
-      this.graduado = event.target.value;
-      return;
-    } else {
-      this.graduado = '';
-    }
-  }
-
-  iconoGraduadoClick() {
-    this.graduado = '';
-  }
-
   receiveMessage($event: any) {
     this.rol = $event;
   }
 
   logout(): void {
     this.auth.logout();
-    const Toast = swal.mixin({
+    const Toast = Swal.mixin({
       toast: true,
       position: 'top-end',
       showConfirmButton: false,
       timer: 3000,
       timerProgressBar: true,
       didOpen: (toast) => {
-        toast.addEventListener('mouseenter', swal.stopTimer);
-        toast.addEventListener('mouseleave', swal.resumeTimer);
+        toast.addEventListener('mouseenter', Swal.stopTimer);
+        toast.addEventListener('mouseleave', Swal.resumeTimer);
       },
     });
 
@@ -181,7 +124,5 @@ export class NavbarComponent implements OnInit {
     this.navbarHiddenService.toggleSideBar();
   }
 
-  buscarGraduado() {
-
-  }
+  buscar() {}
 }

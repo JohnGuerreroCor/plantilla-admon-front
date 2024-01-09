@@ -5,10 +5,10 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { Router, NavigationExtras } from '@angular/router';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { TokenService } from 'src/app/services/token.service';
-import swal from 'sweetalert2';
+import Swal from 'sweetalert2';
 import { Correo } from 'src/app/models/correo';
 
 @Component({
@@ -56,7 +56,7 @@ export class TokenComponent implements OnInit {
         .subscribe(
           (response) => {
             this.auth.guardarCodigoverificacion('true');
-            swal.fire({
+            Swal.fire({
               icon: 'success',
               title: 'Inicio de sesión ',
               text: 'Codigo de verificación correcto.',

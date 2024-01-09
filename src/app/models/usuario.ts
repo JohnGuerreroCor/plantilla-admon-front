@@ -3,9 +3,9 @@ export class Usuario {
   username!: string;
   password!: string;
   clave2!: string;
-  per_codigo!: number;
-  nombre!: String;
-  apellido!: String;
-  uaa!: String;
+  personaCodigo!: number;
+  personaNombre!: String;
+  personaApellido!: String;
+  uaaNombre!: String;
   roles: string[] = [];
 }

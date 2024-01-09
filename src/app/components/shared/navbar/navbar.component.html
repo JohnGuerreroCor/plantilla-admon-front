@@ -23,102 +23,6 @@
         <h6 class="pl-2 item-principal"><i class="fas fa-home"></i> Inicio</h6>
       </a>
     </mat-nav-list>
-    <!--   <mat-nav-list style="background-color: #35474f; padding: 0">
-      <a class="text-white" mat-list-item>
-        <h6 class="item-principal">Estudiante activo:</h6>
-      </a>
-      <div class="input-group pl-3 pr-3 pb-3" style="border: white">
-        <input
-          class="form-control form-control-sidebar"
-          type="number"
-          placeholder="Cédula/codigo"
-          aria-label="Cédula/codigo"
-          [(ngModel)]="estudianteActivo"
-          [value]="estudianteActivo"
-          (input)="cambioIconoEstudiante($event)"
-        />
-        <div class="input-group-append">
-          <button class="btn btn-secondary" (click)="iconoEstudianteClick()">
-            <i
-              [ngClass]="{
-                fas: true,
-                'fa-search': estudianteActivo.length === 0,
-                'fa-times': estudianteActivo.length > 0,
-                'fa-fw': true
-              }"
-            ></i>
-          </button>
-        </div>
-      </div>
-    </mat-nav-list> -->
-    <!-- <mat-nav-list style="padding-bottom: 0"> </mat-nav-list> -->
-    <mat-nav-list style="background-color: #35474f; padding: 0">
-      <a class="text-white" mat-list-item>
-        <h6 class="item-principal">Buscar graduado:</h6>
-      </a>
-      <div class="input-group pl-3 pr-3 pb-3" style="border: white">
-        <input
-          class="form-control form-control-sidebar"
-          type="number"
-          placeholder="Cédula/codigo"
-          aria-label="Cédula/codigo"
-          [(ngModel)]="graduado"
-          [value]="graduado"
-          (input)="cambioIconoGraduado($event)"
-          (keyup.enter)="buscarGraduado()"
-        />
-        <div class="input-group-append">
-          <button class="btn btn-secondary" (click)="iconoGraduadoClick()">
-            <i
-              [ngClass]="{
-                fas: true,
-                'fa-search': graduado.length === 0,
-                'fa-times': graduado.length > 0,
-                'fa-fw': true
-              }"
-            ></i>
-          </button>
-        </div>
-      </div>
-    </mat-nav-list>
-    <!--  <mat-accordion>
-      <mat-expansion-panel
-        class="sidenav"
-        style="width: 280px"
-        (opened)="panelOpenState = true"
-        (closed)="panelOpenState = false"
-      >
-        <mat-expansion-panel-header class="disable_ripple specific-class">
-          <mat-panel-title>
-            <h6 class="text-white mt-2">Estudiante activo:</h6>
-          </mat-panel-title>
-        </mat-expansion-panel-header>
-        <mat-nav-list style="padding: 0">
-          <div class="input-group pl-3 pr-3 pb-3" style="border: white">
-            <input
-              class="form-control form-control-sidebar"
-              type="number"
-              placeholder="Cédula/codigo"
-              aria-label="Cédula/codigo"
-              [value]="searchText"
-              (input)="handleSearchTextChange($event)"
-            />
-            <div class="input-group-append">
-              <button class="btn btn-secondary" (click)="handleIconClick()">
-                <i
-                  [ngClass]="{
-                    fas: true,
-                    'fa-search': searchText.length === 0,
-                    'fa-times': searchText.length > 0,
-                    'fa-fw': true
-                  }"
-                ></i>
-              </button>
-            </div>
-          </div>
-        </mat-nav-list>
-      </mat-expansion-panel>
-    </mat-accordion> -->
     <mat-accordion>
       <mat-expansion-panel
         class="sidenav"
@@ -129,7 +33,7 @@
         <mat-expansion-panel-header class="disable_ripple specific-class">
           <mat-panel-title>
             <h6 class="text-white mt-2">
-              <i class="fa-solid fa-file-pen"></i> Encuestas
+              <i class="fa-solid fa-folder"></i> Item desplegable
             </h6>
           </mat-panel-title>
         </mat-expansion-panel-header>
@@ -138,57 +42,57 @@
             class="pl-5 sidenav-accordion"
             mat-list-item
             style="width: 300px"
-            [routerLink]="['/egresado']"
+            [routerLink]="['/inicio']"
             routerLinkActive="router-link-active"
           >
             <h6 class="text-white">
-              <i class="fa-solid fa-school-circle-check"></i> Egresado
+              <i class="fa-solid fa-folder-open"></i> Sub Item 1
             </h6>
           </a>
           <a
             class="pl-5 sidenav-accordion"
             mat-list-item
             style="width: 300px"
-            [routerLink]="['/desarrollo']"
+            [routerLink]="['/inicio']"
             routerLinkActive="router-link-active"
           >
             <h6 class="text-white">
-              <i class="fa-solid fa-user-graduate"></i> Graduado 1 año
+              <i class="fa-solid fa-folder-open"></i> Sub Item 2
             </h6>
           </a>
           <a
             class="pl-5 sidenav-accordion"
             mat-list-item
             style="width: 300px"
-            [routerLink]="['/desarrollo']"
+            [routerLink]="['/inicio']"
             routerLinkActive="router-link-active"
           >
             <h6 class="text-white">
-              <i class="fa-solid fa-graduation-cap"></i> Graduado 5 años
+              <i class="fa-solid fa-folder-open"></i> Sub Item 3
             </h6>
           </a>
         </mat-nav-list>
       </mat-expansion-panel>
     </mat-accordion>
     <mat-nav-list style="padding: 0">
-      <a class="list" mat-list-item [routerLink]="['/puesto-votacion']">
+      <a class="list" mat-list-item [routerLink]="['/inicio']">
         <h6 class="pl-2 item-principal">
-          <i class="fa-solid fa-check-to-slot"></i> Puesto de votación
+          <i class="fa-solid fa-check-to-slot"></i> Item uno
         </h6>
       </a>
-      <a class="list" mat-list-item [routerLink]="['/tasa-graduacion']">
+      <a class="list" mat-list-item [routerLink]="['/inicio']">
         <h6 class="pl-2 item-principal">
-          <i class="fa-solid fa-chart-pie"></i> Tasa de graduación
+          <i class="fa-solid fa-chart-pie"></i> Item dos
         </h6>
       </a>
       <a
         class="list"
         mat-list-item
-        [routerLink]="['/reportes']"
+        [routerLink]="['/inicio']"
         routerLinkActive="router-link-active"
       >
         <h6 class="pl-2 item-principal">
-          <i class="fa-solid fa-chart-simple"></i> Reportes
+          <i class="fa-solid fa-chart-simple"></i> Item tres
         </h6>
       </a>
     </mat-nav-list>
@@ -204,7 +108,7 @@
       >
         <i class="fas fa-bars"></i>
       </button>
-      <h6>Sistema administrador graduados y egresados</h6>
+      <h6>Plantilla administrador</h6>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item dropdown">
           <a

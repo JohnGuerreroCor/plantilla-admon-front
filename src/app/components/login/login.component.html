@@ -8,7 +8,6 @@
             mat-card-image
             src="assets/universidad-surcolombiana-multicampos-white.png"
             class="img-fluid"
-            style="width: 80%"
           />
         </div>
       </div>
@@ -56,6 +55,7 @@
                   placeholder="Digite la primera clave"
                   autocomplete="off"
                 />
+                <!-- BOTON DE ACCÍON PARA MOSTRAR LA CONTRASEÑA NO RECOMENDADO PARA MÓDULOS ADMINISTRADOR POR PÓLITICAS DE SEGURIDAD -->
                 <!-- <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
                   [attr.aria-pressed]="hide">
                   <mat-icon>{{
@@ -81,6 +81,7 @@
                   placeholder="Digite la segunda clave"
                   autocomplete="off"
                 />
+                <!-- BOTON DE ACCÍON PARA MOSTRAR LA CONTRASEÑA NO RECOMENDADO PARA MÓDULOS ADMINISTRADOR POR PÓLITICAS DE SEGURIDAD -->
                 <!-- <button mat-icon-button matSuffix (click)="ver = !ver" [attr.aria-label]="'ver password'"
                   [attr.aria-pressed]="ver">
                   <mat-icon>{{
@@ -90,7 +91,7 @@
               </mat-form-field>
             </div>
           </div>
-          <div class="row mb-2">
+          <div class="row mb-3">
             <div class="col">
               <button
                 (click)="login()"
@@ -117,20 +118,22 @@
               >
             </div>
           </div>
-          <!-- <div class="row">
-            <div class="col mb-4">
-              <small
-                [routerLink]="['/instructivo']"
-                routerLinkActive="router-link-active"
-                class="font-usco-vt font-weight-bold cursor-select"
-                ><i class="fa-solid fa-book"></i> Instructivo</small
+          <div class="row">
+            <div class="col mb-3">
+              <a
+                href="https://www.usco.edu.co/imagen-institucional/"
+                target="_blank"
+              >
+                <small class="font-usco-vt font-weight-bold cursor-select"
+                  ><i class="fa-solid fa-book"></i> Instructivo</small
+                ></a
               >
             </div>
-          </div> -->
+          </div>
           <div>
             <small
               ><b class="version"
-                >© {{ today | date : "yyyy" }} CITCD - Versión 2 Construcción
+                >© {{ today | date : "yyyy" }} CITCD - Versión 1 Construcción
                 1.0</b
               ></small
             >
