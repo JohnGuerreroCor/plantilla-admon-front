@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.crearFormularioLogin();
     if (this.authService.isAuthenticated()) {
-      if (this.authService.codigoverificacion != null) {
+      if (this.authService.codigoverificacion != null && this.authService.Codigoverificacion) {
         const Toast = swal.mixin({
           toast: true,
           position: 'top-end',
