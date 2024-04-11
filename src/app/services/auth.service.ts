@@ -130,8 +130,6 @@ export class AuthService {
 
   guardarUsuario(accessToken: string): void {
     let datos = this.obtenerdatosToken(accessToken);
-    //  let helper = new JwtHelperService();
-    // let datos = helper.decodeToken(accessToken);
 
     this.usuario = new Usuario();
     this.usuario.username = datos.user_name;
