@@ -29,6 +29,61 @@
         style="width: 280px"
         (opened)="panelOpenState = true"
         (closed)="panelOpenState = false"
+        (opened)="togglePanel('panel1')"
+        [expanded]="panelAbierto === 'panel1'"
+      >
+        <mat-expansion-panel-header class="disable_ripple specific-class">
+          <mat-panel-title>
+            <h6 class="text-white mt-2">
+              <i class="fa-solid fa-folder"></i> Item desplegable
+            </h6>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-nav-list style="padding: 0">
+          <a
+            class="pl-5 sidenav-accordion"
+            mat-list-item
+            style="width: 300px"
+            [routerLink]="['/inicio']"
+            routerLinkActive="router-link-active"
+          >
+            <h6 class="text-white">
+              <i class="fa-solid fa-folder-open"></i> Sub Item 1
+            </h6>
+          </a>
+          <a
+            class="pl-5 sidenav-accordion"
+            mat-list-item
+            style="width: 300px"
+            [routerLink]="['/inicio']"
+            routerLinkActive="router-link-active"
+          >
+            <h6 class="text-white">
+              <i class="fa-solid fa-folder-open"></i> Sub Item 2
+            </h6>
+          </a>
+          <a
+            class="pl-5 sidenav-accordion"
+            mat-list-item
+            style="width: 300px"
+            [routerLink]="['/inicio']"
+            routerLinkActive="router-link-active"
+          >
+            <h6 class="text-white">
+              <i class="fa-solid fa-folder-open"></i> Sub Item 3
+            </h6>
+          </a>
+        </mat-nav-list>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel
+        class="sidenav"
+        style="width: 280px"
+        (opened)="panelOpenState = true"
+        (closed)="panelOpenState = false"
+        (opened)="togglePanel('panel2')"
+        [expanded]="panelAbierto === 'panel2'"
       >
         <mat-expansion-panel-header class="disable_ripple specific-class">
           <mat-panel-title>
@@ -96,6 +151,22 @@
         </h6>
       </a>
     </mat-nav-list>
+    <div class="text-center footer-tabs mb-2">
+      <hr class="dashed" />
+      <small class="text-white"
+        >HORA INICIO SESIÓN: <br />
+        {{ horaInicioSesion | date : "dd-MM-yyyy, h:mm a" }}
+      </small>
+      <hr class="dashed" />
+      <small class="text-white">
+        HORA FINALIZACIÓN: <br />
+        {{ horaFinSesion | date : "dd-MM-yyyy, h:mm a" }}
+      </small>
+      <br /><br />
+      <small class="text-white font-usco-default font-weight-bold text-center"
+        >© {{ anio | date : "yyyy" }} CITCD - Versión 2</small
+      >
+    </div>
   </mat-sidenav>
   <mat-sidenav-content (validarToken)="receiveMessage($event)">
     <mat-toolbar *ngIf="rol != ''" class="toolbar">
@@ -108,7 +179,7 @@
       >
         <i class="fas fa-bars"></i>
       </button>
-      <h6>Plantilla administrador</h6>
+      <h6 class="font-weight-bold">Módulo Plantilla Administrador</h6>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item dropdown">
           <a
@@ -137,7 +208,7 @@
             {{ nombre | titlecase }} {{ apellido | titlecase }}</a
           >
           <div
-            class="dropdown-menu dropdown-menu-right dropdown-info"
+            class="dropdown-menu dropdown-menu-right dropdown-info mt-2"
             aria-labelledby="navbarDropdownMenu"
             id="gradiante"
           >

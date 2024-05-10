@@ -4,8 +4,9 @@ export class Usuario {
   password!: string;
   clave2!: string;
   personaCodigo!: number;
-  personaNombre!: String;
-  personaApellido!: String;
-  uaaNombre!: String;
+  personaNombre!: string;
+  personaApellido!: string;
+  uaaNombre!: string;
   roles: string[] = [];
+  horaInicioSesion!: string;
 }

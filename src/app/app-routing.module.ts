@@ -8,6 +8,7 @@ import { AuthGuard } from './guard/auth.guard';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 
 const routes: Routes = [
+  { path: '', pathMatch: 'full', redirectTo: 'login' },
 
   { path: 'acceso-denegado', component: NotfoundComponent },
 
@@ -16,7 +17,7 @@ const routes: Routes = [
 
   { path: 'inicio', component: InicioComponent, canActivate: [AuthGuard] },
 
-  { path: '**', pathMatch: 'full', redirectTo: '/acceso-denegado' },
+  { path: '**', redirectTo: 'acceso-denegado' },
 ];
 
 @NgModule({
