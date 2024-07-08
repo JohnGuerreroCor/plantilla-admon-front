@@ -152,7 +152,42 @@
       </a>
     </mat-nav-list>
     <div class="text-center footer-tabs mb-2">
-      <hr class="dashed" />
+      <div class="accordion cursor-select" id="accordionExample">
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h2 class="mb-0">
+              <small
+                class="text-white font-usco-default font-weight-bold text-center"
+                style="font-size: 14px"
+                data-toggle="collapse"
+                data-target="#collapseOne"
+                aria-expanded="true"
+                aria-controls="collapseOne"
+                >© {{ anio | date : "yyyy" }} CITCD - Versión 1</small
+              >
+            </h2>
+          </div>
+          <div
+            id="collapseOne"
+            class="collapse"
+            aria-labelledby="headingOne"
+            data-parent="#accordionExample"
+          >
+            <div class="card-body">
+              <small class="text-white"
+                >HORA INICIO SESIÓN: <br />
+                {{ horaInicioSesion | date : "dd-MM-yyyy, h:mm a" }}
+              </small>
+              <hr class="dashed" />
+              <small class="text-white">
+                HORA FINALIZACIÓN: <br />
+                {{ horaFinSesion | date : "dd-MM-yyyy, h:mm a" }}
+              </small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <hr class="dashed" />
       <small class="text-white"
         >HORA INICIO SESIÓN: <br />
         {{ horaInicioSesion | date : "dd-MM-yyyy, h:mm a" }}
@@ -164,8 +199,8 @@
       </small>
       <br /><br />
       <small class="text-white font-usco-default font-weight-bold text-center"
-        >© {{ anio | date : "yyyy" }} CITCD - Versión 2</small
-      >
+        >© {{ today | date : "yyyy" }} CITCD - Versión 2</small
+      > -->
     </div>
   </mat-sidenav>
   <mat-sidenav-content (validarToken)="receiveMessage($event)">
