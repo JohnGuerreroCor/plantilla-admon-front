@@ -1,4 +1,4 @@
-# Plantilla Módulos Administradores
+# Plantilla Front - Módulos Administradores
 
 ![Logo de la USCO](https://www.usco.edu.co/imagen-institucional/logo/universidad-surcolombiana.png)
 
