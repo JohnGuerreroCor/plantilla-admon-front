@@ -4,17 +4,17 @@
 
 Esta plantilla ha sido desarrollada utilizando las siguientes tecnologías:
 
-- **Angular 15**  
-  Documentación oficial: [https://angular.io/docs](https://angular.io/docs)
+- **Angular 15.2.11**  
+  Documentación oficial: [https://angular.io/docs](https://www.npmjs.com/package/@angular/cli/v/15.2.11)
 
 - **Angular Material 15**  
-  Documentación oficial: [https://material.angular.io/](https://material.angular.io/)
+  Documentación oficial: [https://material.angular.io/](https://v15.material.angular.io/)
 
 - **Bootstrap 4.6**  
   Documentación oficial: [https://getbootstrap.com/docs/4.6/getting-started/introduction/](https://getbootstrap.com/docs/4.6/getting-started/introduction/)
 
 - **FontAwesome 6**  
-  Documentación oficial: [https://fontawesome.com/docs](https://fontawesome.com/docs)
+  Documentación oficial: [https://fontawesome.com/docs](https://fontawesome.com/search?o=r&m=free)
 
 ## Descripción
 
