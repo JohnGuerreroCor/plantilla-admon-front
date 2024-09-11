@@ -1,6 +1,6 @@
 # Plantilla Módulos Administradores
 
-![Logo de la Empresa](ruta/al/logo.png)
+![Logo de la USCO](https://www.usco.edu.co/imagen-institucional/logo/universidad-surcolombiana.png)
 
 Esta plantilla ha sido desarrollada utilizando las siguientes tecnologías:
 
