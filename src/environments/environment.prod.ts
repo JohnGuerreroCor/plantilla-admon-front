@@ -5,9 +5,8 @@ export const environment = {
   //DESCOMENTAR PRODUCCIÓN
   //production: true,
 
-
   //DESCOMENTAR LOCAL
-  URL_BACKEND: 'http://localhost:8080/plantilla-administrador-1.0',
+  URL_BACKEND: 'http://localhost:8080/plantilla_admon-1.0',
 
   //DESCOMENTAR PRODUCCIÓN
   //URL_BACKEND: 'https://sanagustin.usco.edu.co/',
